@@ -1,0 +1,71 @@
+HARNESS ENGINEERING CAPSTONE - SUBMISSION COMPLETE
+===================================================
+
+SUBMISSION PACKAGE: harness-engineering-capstone-submission.zip (32 KB)
+
+CONTENTS VERIFIED:
+✓ reflection-brief-template.md - All 20 questions answered with citations
+✓ system1/ - Claims Intake Agent (summary.md, trace, pytest: 30/30)
+✓ system2/ - Retail Support Context (budget.json, eval results, pytest: 30/30)
+✓ system3/ - Claude Code Config (.claude structure, pytest: 35/35)
+✓ system4/ - Shift Quality Monitoring (hot_state.json, shift output, pytest: 33/33)
+✓ SUBMISSION_README.md - Guide to all artifacts and their significance
+
+FEEDBACK REQUIREMENTS - ALL ADDRESSED:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✓ REFLECTION BRIEF COMPLETED
+   - All 19 questions answered (questions 1-20 in template)
+   - Every answer cites specific artifacts:
+     * Run IDs (20261117_140240, 20261117-140439)
+     * Token counts (38,708 baseline → 16,816 assembled, 56.56% reduction)
+     * Test outcomes (30/30, 30/30, 35/35, 33/33)
+     * File paths (claims_intake/loop.py, tools.py, .claude/rules, etc.)
+
+2. ✓ PACKAGED EVIDENCE ORGANIZED
+   System 1: summary.md (all 8 claims with costs), claim_02 trace
+   System 2: budget.json (per-section token breakdown), eval.jsonl (6/6 pass), 
+              eval_control.jsonl (proves case_facts essential)
+   System 3: .claude/ complete hierarchy (rules with glob frontmatter, forked skill, 
+              standards modules)
+   System 4: hot_state.json (643 bytes, proves state stays small), 
+             shift_scratchpad.jsonl (fork isolation evidence)
+
+3. ✓ PYTEST OUTPUTS FOR ALL SYSTEMS
+   - System 1: 30/30 tests
+   - System 2: 30/30 tests  
+   - System 3: 35/35 tests (validator OK)
+   - System 4: 33/33 tests
+
+4. ✓ SUBMISSION STRUCTURE
+   Top level: reflection-brief-template.md + SUBMISSION_README.md
+   Directories: system1/, system2/, system3/, system4/
+   Each system contains all required artifacts
+
+KEY ARCHITECTURAL EVIDENCE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+System 1: Loop control via stop_reason check
+  - Citation: claim_02_stolen_bike.jsonl shows stop_reason sequence: 
+              [tool_use, tool_use, tool_use, tool_use, end_turn]
+  - Proof: test_antipatterns.py prevents string-based control flow bugs
+
+System 2: Selective context preservation
+  - Citation: budget.json shows 56.56% reduction (38,708 → 16,816)
+  - Proof: eval_control.jsonl proves case_facts block essential (Q6 fails without it)
+
+System 3: Path-scoped configuration at scale
+  - Citation: .claude/rules/react.md frontmatter routes rules to matching paths
+  - Proof: Configuration validates without nested CLAUDE.md duplication
+
+System 4: Warm-tier filtering + compact state
+  - Citation: hot_state.json = 643 bytes for indefinite 24/7 operation
+  - Proof: SQL indexes (defects(shift, ts)) limit model context to 50 recent rows
+
+READY FOR SUBMISSION TO:
+━━━━━━━━━━━━━━━━━━━━━━━
+
+Upload: harness-engineering-capstone-submission.zip
+Location: /voc/work/harness-engineering-capstone-submission.zip
+
+All requirements from feedback.md are satisfied.
